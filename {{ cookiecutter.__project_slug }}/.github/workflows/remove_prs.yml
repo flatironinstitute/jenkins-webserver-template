@@ -26,5 +26,5 @@ jobs:
       run: python scripts/remove_closed_prs.py -g --cmd "python ../git-filter-repo.py"
     - name: Push back to origin
       run: |
-        git remote add origin https://github.com/{{ cookiecutter.github_user }}/{{ cookiecutter.github_repo }}
+        git remote add origin https://github.com/{{ cookiecutter.github_user }}/{{ cookiecutter.__github_repo }}
         git push -f origin main
