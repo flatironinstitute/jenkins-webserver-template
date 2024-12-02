@@ -9,8 +9,5 @@ pipx install cookiecutter
 cookiecutter gh:flatironinstitute/jenkins-webserver-template
 ```
 
-And answer the prompts. After completion, next steps will be printed to stdout --- pay attention to them!.
+And answer the prompts. After completion, next steps will be printed to stdout --- pay attention to them!
 
-## TODO
-
-- create and give info about jenkinsfile

@@ -18,7 +18,7 @@ source: site
 title: {{ cookiecutter.software_package_name }}
 description: {{ cookiecutter.site_description }}
 baseurl: {{ cookiecutter.site_baseurl }} # the subpath of your site, e.g. /blog
-url: {{ cookiecutter.site_url }} # the base hostname & protocol for your site, e.g. http://example.com
+url: "{{ cookiecutter.site_url }}" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: {{ cookiecutter.github_user }}
 
 markdown: kramdown
