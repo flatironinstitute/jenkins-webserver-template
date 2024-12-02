@@ -11,4 +11,6 @@ cookiecutter gh:flatironinstitute/jenkins-webserver-template
 
 And answer the prompts. After completion, next steps will be printed to stdout --- pay attention to them!
 
-There are two templates this will help you generate, the `webserver` and the `jenkinsfile` (running the above command will prompt you as to which you want). `webserver` sets up the host for the static site, and should only need to be run once, while `jenkinsfile` sets up the files to be coped to the *source* for the static site, and so will need to be run each time you add a source (for documentation, this is probably only once; for workshops, it may be multiple times).
+There are two templates this will help you generate, the `webserver` and the `jenkinsfile` (running the above command will prompt you as to which you want):
+- `webserver` sets up the host for the static site, and should only need to be run once
+- `jenkinsfile` sets up the files to be copied to the *source* for the static site, and so will need to be run each time you add a source (for documentation, this is probably only once; for workshops, it may be multiple times).
