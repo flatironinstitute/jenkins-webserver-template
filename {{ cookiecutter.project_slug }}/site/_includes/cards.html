@@ -1,6 +1,10 @@
+<!-- this tortured string is to make sure that cookiecutter only interacts
+     with push_target_dir part here, the rest gets left for jekyll -->
+{{ "{%" }} assign card_targets = site.{{ cookiecutter.push_target_dir }} {{ "%}" }}
+{% raw -%}
 <div class="grid cards">
 <ul>
-    {% for card in site.{{ cookiecutter.push_target_dir }} %}
+    {% for card in card_targets %}
     <li>
         <h3>
             {%- if card.main_url.size > 0 -%}
@@ -57,3 +61,4 @@
     {% endfor %}
 </ul>
 </div>
+{% endraw -%}

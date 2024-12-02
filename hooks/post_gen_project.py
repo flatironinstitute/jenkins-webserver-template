@@ -8,7 +8,7 @@ symlink_path = jekyll_output_dir / "{{ cookiecutter.push_target_dir }}"
 target_path = "../{{ cookiecutter.push_target_dir }}"
 print(f"Creating symlink from {symlink_path} to {target_path}.")
 os.makedirs(jekyll_output_dir)
-os.symlink(symlink_path, target_path)
+os.symlink(target_path, symlink_path)
 
 REMOVE_PATHS = [
     '{% if cookiecutter.remove_prs_auto != "true" %}.github/workflows/remove_prs.yml{% endif %}',
@@ -23,8 +23,8 @@ for path in REMOVE_PATHS:
 git_org = "{{ cookiecutter.github_user }}"
 git_name = "{{ cookiecutter.github_repo }}"
 asset_path = "{{ cookiecutter.project_slug }}/site/assets"
-asset_names = ["{{ cookiecutter.light_mode_logo_name }}",
-               "{{ cookiecutter.dark_mode_logo_name }}",
+asset_names = ["images/{{ cookiecutter.light_mode_logo_name }}",
+               "images/{{ cookiecutter.dark_mode_logo_name }}",
                "{{ cookiecutter.favicon_name }}"]
 
 next_steps = f"""Website local directory created at {Path('.').resolve().as_posix()}! Next steps:
@@ -48,4 +48,4 @@ next_steps = f"""Website local directory created at {Path('.').resolve().as_posi
 **SET UP JENKINS**
 1. See https://github.com/flatironinstitute/neurorse-internal/blob/main/docs/jenkins.md for how to set up Jenkins
 """
-print("next_steps")
+print(next_steps)

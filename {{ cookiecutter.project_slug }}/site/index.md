@@ -9,4 +9,6 @@ title: {{ cookiecutter.home_page_title }}
 
 {{ cookiecutter.home_page_text }}
 
+{% raw -%}
 {% include cards.html %}
+{% endraw -%}
