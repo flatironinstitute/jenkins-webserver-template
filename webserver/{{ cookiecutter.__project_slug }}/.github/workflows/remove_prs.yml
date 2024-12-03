@@ -32,6 +32,6 @@ jobs:
         # push back to origin. If git remote -v returns something, there's
         # nothing to do.
         if [[ -z $(git remote -v) ]]; then
-          git remote add origin https://github.com/plenoptic-org/plenoptic-workshops
+          git remote add origin https://github.com/{{ cookiecutter.github_user }}/{{ cookiecutter.__github_repo }}
           git push -f origin main
         fi

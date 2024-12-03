@@ -6,7 +6,9 @@
   "dark_mode_logo_name": "Plenoptic_Logo_CMYK_Full_DarkMode_Wide.svg",
   "light_mode_logo_name": "Plenoptic_Logo_CMYK_Full_Wide.svg",
   "favicon_name": "favicon.ico",
-  "home_page_text": "This site has links to tutorials and examples used during in-person workshops for teaching how to use plenoptic, a python library for model-based synthesis of perceptual stimuli. Unless otherwise noted, these materials are independent of each other, and are intended as an introduction to the package.\n\nFor more details about what plenoptic is, go to our [home page](https://plenoptic.org).",
+  "root_index": ["landing_page", "redirect"],
+  "root_index_text": "This site has links to tutorials and examples used during in-person workshops for teaching how to use plenoptic, a python library for model-based synthesis of perceptual stimuli. Unless otherwise noted, these materials are independent of each other, and are intended as an introduction to the package.\n\nFor more details about what plenoptic is, go to our [home page](https://plenoptic.org).",
+  "subdir_index": ["browse", "redirect"],
   "software_package_name": "{{ cookiecutter.project_name.lower().split(' ')[0] }}",
   "github_user": "{{ cookiecutter.software_package_name + '-org' }}",
   "__github_repo": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
@@ -18,12 +20,11 @@
     "remove_prs_auto": "Should we create the github action to remove output for closed PRs (weekly)?",
     "dark_mode_logo_name": "Filename of the dark mode logo",
     "light_mode_logo_name": "Filename of the light mode logo",
-    "home_page_text": "Text body to place on home page (use \\n for newlines).",
+    "root_index": "Should root index.html be a landing page or simply redirect?",
+    "root_index_text": "Text body to place on root index.html (use \\n for newlines, IGNORE if just a redirect).",
+    "subdir_index": "Should subdirectory index.html pages allow users to browse or simply redirect?",
     "site_description": "Description to place in website's head meta tag, for Google search results.",
     "site_url": "url where this site will live",
     "site_baseurl": "subpath where this site will live under site_url. This should probably be empty."
-  },
-  "_copy_without_render": [
-    ".github/workflows/site.yml"
-  ]
+  }
 }

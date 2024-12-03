@@ -43,8 +43,23 @@ jobs:
 
     - name: Build
       run: |
-        python scripts/create_collection_md.py
+        {%- if cookiecutter.root_index == "landing_page" %}
+          {%- if cookiecutter.subdir_index == "browse" %}
+        python scripts/create_collection_md.py --subdir_index browse
+          {%- else %}
+        python scripts/create_collection_md.py --subdir_index redirect
+          {%- endif %}
+        {%- else %}
+          {%- if cookiecutter.subdir_index == "browse" %}
+        python scripts/create_collection_md.py --root_index_redirect --subdir_index browse
+          {%- else %}
+        python scripts/create_collection_md.py --root_index_redirect --subdir_index redirect
+          {%- endif %}
+        {%- endif %}
         bundle exec jekyll build --verbose -d ./_site
+        {%- if cookiecutter.subdir_index == "browse" %}
+        python scripts/rearrange_browse_pages.py
+        {%- endif %}
 
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
@@ -53,7 +68,9 @@ jobs:
   deploy:
     environment:
       name: github-pages
+      {% raw -%}
       url: ${{ steps.deployment.outputs.page_url }}
+      {% endraw -%}
     runs-on: ubuntu-latest
     needs: build
     steps:
