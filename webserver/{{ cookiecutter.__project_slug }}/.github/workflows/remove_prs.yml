@@ -25,6 +25,13 @@ jobs:
     - name: Remove PRs
       run: python scripts/remove_closed_prs.py -g --cmd "python ../git-filter-repo.py"
     - name: Push back to origin
+      shell: bash
       run: |
-        git remote add origin https://github.com/{{ cookiecutter.github_user }}/{{ cookiecutter.__github_repo }}
-        git push -f origin main
+        # if git remote -v doesn't return anything, then we ran the above script
+        # (because git filter-repo removes the origin remote) and thus we should
+        # push back to origin. If git remote -v returns something, there's
+        # nothing to do.
+        if [[ -z $(git remote -v) ]]; then
+          git remote add origin https://github.com/plenoptic-org/plenoptic-workshops
+          git push -f origin main
+        fi
