@@ -2,7 +2,7 @@
 
 This repo hosts static site(s). The source materials are hosted elsewhere, the output is built by Jenkins and pushed here, and the site itself is hosted on github pages. The software architecture comes from [jenkins-webserver-template](https://github.com/flatironinstitute/jenkins-webserver-template).
 
-{% if cookiecutter.remove_prs_auto == "true" -%}
+{% if cookiecutter.remove_prs_auto == true -%}
 
 > [!CAUTION]
 > This repo should not be edited manually.

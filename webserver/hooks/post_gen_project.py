@@ -19,7 +19,7 @@ subprocess.run("git commit -m 'Adds template-generated files'", shell=True)
 print(f"\nCreating symlink from {symlink_path} to {target_path}.")
 
 REMOVE_PATHS = [
-    '{% if cookiecutter.remove_prs_auto != "true" %}.github/workflows/remove_prs.yml{% endif %}',
+    '{% if cookiecutter.remove_prs_auto != true %}.github/workflows/remove_prs.yml{% endif %}',
 ]
 for path in REMOVE_PATHS:
     path = path.strip()
