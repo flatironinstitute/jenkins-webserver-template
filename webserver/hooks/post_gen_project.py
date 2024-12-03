@@ -13,7 +13,7 @@ os.symlink(target_path, symlink_path)
 subprocess.run("git init", shell=True)
 subprocess.run("git remote add origin https://github.com/{{ cookiecutter.github_user }}/{{ cookiecutter.__github_repo }}",
                shell=True)
-subprocess.run("git add .", shell=True)
+subprocess.run("git add -f .", shell=True)
 subprocess.run("git commit -m 'Adds template-generated files'", shell=True)
 
 print(f"\nCreating symlink from {symlink_path} to {target_path}.")
