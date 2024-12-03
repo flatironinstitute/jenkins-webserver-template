@@ -2,13 +2,13 @@
   "templates": {
     "webserver": {
       "path": "./webserver",
-      "title": "Webserver configuration",
-      "description": "Configure webserver (the github repository that will *host* the built static site)"
+      "title": "Create webserver repo",
+      "description": "Initialize webserver, the github repository that will *host* the built static site"
     },
     "jenkinsfile": {
       "path": "./jenkinsfile",
       "title": "Create jenkins directory",
-      "description": "Create dockerfile and jenkinsfile to place in the *source* repository (which holds the files to build)"
+      "description": "Create dockerfile and jenkinsfile to place in the *source* repository, which holds the files to build"
     }
   }
 }
