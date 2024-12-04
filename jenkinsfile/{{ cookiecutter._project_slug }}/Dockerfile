@@ -6,6 +6,7 @@ RUN apt-get update && \
       'python3.11-venv' \
       git \
       curl \
+      pandoc \
       jq "{{ cookiecutter.additional_apt_deps }}" \
       && \
     apt-get autoremove --purge -y && \
