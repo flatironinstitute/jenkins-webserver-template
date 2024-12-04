@@ -59,7 +59,9 @@ next_steps = f"""\nWebsite local directory created at {Path('.').resolve().as_po
 4. Copy the following files to {asset_path}: {asset_names}
 
 **SET UP JENKINS AND GITHUB PAGES**
-1. See https://github.com/flatironinstitute/neurorse-internal/blob/main/docs/jenkins.md for how to set up Jenkins to build the site, and GitHub Pages to host it.
+1. Run this cookiecutter again to generate the jenkins/ directory to place in your source directory.
+
+2. See https://github.com/flatironinstitute/neurorse-internal/blob/main/docs/jenkins.md for how to set up Jenkins to build the site, and GitHub Pages to host it.
 
 If you have any issues with this, ask Billy!
 """
