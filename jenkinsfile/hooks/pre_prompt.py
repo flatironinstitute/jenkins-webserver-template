@@ -30,6 +30,10 @@ Examples:
 See https://github.com/plenoptic-org/plenoptic-cshl-vision-2024/tree/main/jenkins for an
 example output of this template.
 
+Note that if `built_site_name` is empty, we assume that this will be the *only* source
+repo pushing to the corresponding webserver. So, if you are planning on adding other
+sources later, put something in that variable.
+
 """
 
 print(to_print)

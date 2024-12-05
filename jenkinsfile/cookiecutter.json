@@ -18,7 +18,7 @@
   "additional_apt_deps": "ffmpeg",
   "__prompts__": {
     "push_target_dir": "(push_target_dir) Specify the name of the top-level directory where all jenkins jobs will push their output.",
-    "built_site_name": "(built_site_name) Specify the second-level directory where the jenkins *for this* project will push its output (can be empty).",
+    "built_site_name": "(built_site_name) Specify the second-level directory where the jenkins *for this* project will push its output. If empty, we assume that there's *only one* source repo.",
     "credentials_name": "Specify the name of the Jenkins credentials for posting on source repo's pull requests",
     "install_step": "Step to install python requirements to build materials.",
     "prebuild_step": "Any steps to run before building materials?",
