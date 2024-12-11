@@ -25,13 +25,17 @@ pipeline {
       steps {
         sh 'python3.11 -m venv --system-site-packages $HOME'
         sh '''#!/bin/bash -ex
+              # make sure we have the git tags, since we need them to correctly version output
+              git fetch --tags
               source $HOME/bin/activate
               pip install -U pip
               {{ cookiecutter.install_step }}
-              python3.11 -c "import torch; print(torch.cuda.current_device())"
               {{ cookiecutter.prebuild_step }}
               {{ cookiecutter.build_step }}
               {{ cookiecutter.postbuild_step }}
+              # we move this to a separate directory to reduce the risk of the checkout
+              # below clobbering it
+              mv {{ cookiecutter.output_dir }} \$HOME/built-{{ cookiecutter.push_target_dir }}
            '''
         lock('{{ cookiecutter.github_target_repo }}_publish') {
           script {
@@ -50,7 +54,7 @@ pipeline {
                 DOCS_DIR={{ cookiecutter.push_target_dir }}/\$PROJECT_NAME/\$out_dir
                 rm -rf \$DOCS_DIR
                 mkdir -p \$DOCS_DIR
-                cp -rp \$HOME/{{ cookiecutter.output_dir }}/* \$DOCS_DIR
+                cp -rp \$HOME/built-{{ cookiecutter.push_target_dir }}/* \$DOCS_DIR
                 # using -f here makes sure we add the index.html files, which are included in .gitignore (since some are auto-generated)
                 git add -A -f --verbose {{ cookiecutter.push_target_dir }}/\$PROJECT_NAME
                 GIT_COMMITTER_EMAIL="jenkins@flatironinstitute.org" GIT_COMMITTER_NAME="Flatiron Jenkins" git commit --author='Flatiron Jenkins <jenkins@flatironinstitute.org>' --allow-empty -m "Generated documentation for \$DOCS_DIR" -m '${env.BUILD_TAG}'
