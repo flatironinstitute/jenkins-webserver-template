@@ -38,9 +38,11 @@ for file in ["site/index.md"]:
 git_org = "{{ cookiecutter.github_user }}"
 git_name = "{{ cookiecutter.__github_repo }}"
 asset_path = "{{ cookiecutter.__project_slug }}/site/assets"
-asset_names = ["images/{{ cookiecutter.light_mode_logo_name }}",
-               "images/{{ cookiecutter.dark_mode_logo_name }}",
-               "{{ cookiecutter.favicon_name }}"]
+asset_names = [
+    '{% if cookiecutter.light_mode_logo_name != "03-FI-primary-logo-white.png" %}images/{{ cookiecutter.light_mode_logo_name }}{% endif %}',
+    '{% if cookiecutter.dark_mode_logo_name != "01-FI-primary-logo-color.png" %}images/{{ cookiecutter.dark_mode_logo_name }}{% endif %}',
+    '{% if cookiecutter.favicon_name != "ccn_small.png" %}{{ cookiecutter.favicon_name }}{% endif %}',
+]
 
 next_steps = f"""\nWebsite local directory created at {Path('.').resolve().as_posix()}! Next steps:
 
