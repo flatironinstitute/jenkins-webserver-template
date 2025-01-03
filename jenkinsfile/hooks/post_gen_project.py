@@ -15,7 +15,7 @@ existing one, after your existing stage sections. You may additionally want to:
 2. Add a when block, if your existing Jenkinsfile has additional triggers.
 
 For both, see plenoptic's Jenkinsfile for an example
-(https://github.com/plenoptic-org/plenoptic-cshl-vision-2024/tree/main/jenkins/Jenkinsfile)
+(https://github.com/plenoptic-org/plenoptic/tree/main/jenkins/Jenkinsfile)
 
 """
 print(to_print)
