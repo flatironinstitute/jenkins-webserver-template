@@ -50,6 +50,7 @@ pipeline {
                 else
                    out_dir="branch/\$BRANCH_NAME"
                 fi
+                mkdir -p {{ cookiecutter.push_target_dir }}/\$PROJECT_NAME
                 echo \$GITHUB_PATH > {{ cookiecutter.push_target_dir }}/\$PROJECT_NAME/.gh_path
                 DOCS_DIR={{ cookiecutter.push_target_dir }}/\$PROJECT_NAME/\$out_dir
                 rm -rf \$DOCS_DIR
