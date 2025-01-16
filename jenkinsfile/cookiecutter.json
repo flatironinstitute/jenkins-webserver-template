@@ -29,7 +29,7 @@
     "github_source_repo": "Name of the repo where source materials live (the repo that will contain this Jenkinsfile), under github_user",
     "github_target_repo": "Name of the repo where built materials will be pushed, under github_user",
     "site_url": "(site_url) url where this site will live",
-    "site_baseurl": "(site_baseurl) subpath where this site will live under site_url. This should probably be empty.",
+    "site_baseurl": "(site_baseurl) subpath where this site will live under site_url. This should probably be empty; if not, should start with /",
     "additional_apt_deps": "Any additional packages to install via apt (space-separated)?"
   }
 }

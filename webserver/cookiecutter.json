@@ -25,6 +25,6 @@
     "subdir_index": "Should subdirectory index.html pages allow users to browse or simply redirect?",
     "site_description": "Description to place in website's head meta tag, for Google search results.",
     "site_url": "url where this site will live",
-    "site_baseurl": "subpath where this site will live under site_url. This should probably be empty."
+    "site_baseurl": "subpath where this site will live under site_url. This should probably be empty; if not, should start with /"
   }
 }

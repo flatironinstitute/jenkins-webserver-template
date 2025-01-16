@@ -9,7 +9,7 @@ another static site generator.
 
 The built site will live at:
 
-{site_url}/{site_baseurl}/{push_target_dir}/{built_site_name}.
+{site_url}{site_baseurl}/{push_target_dir}/{built_site_name}.
 
 Of those, site_baseurl and built_site_name can (and probably should) be empty.
 
@@ -26,6 +26,12 @@ Examples:
   - site_baseurl: ""
   - push_target_dir: "workshops"
   - built_site_name: "CSHL-vision-course-2024"
+
+3. https://flatironinstitute.github.io/neurorse-workshops/workshops/jan-2025/
+  - site_url: "https://flatironinstitute.github.io"
+  - site_baseurl: "/neurorse-workshops"
+  - push_target_dir: "workshops"
+  - built_site_name: "jan-2025"
 
 See https://github.com/plenoptic-org/plenoptic-cshl-vision-2024/tree/main/jenkins for an
 example output of this template.
